@@ -2,9 +2,18 @@
 <body style="box-sizing: border-box; width:1080; height:1920; border: green solid 10px; text-align:center; margin: 0; background-color: white;">
     <img src="https://librarygivingday.org/wp-content/uploads/2019/01/Library-Giving-Day-logo-color-stacked.png" style="margin: 70px 0;">
     
-<img style="width:540px;" src="https://www.abcfundraising.com/thermometer-generator?max=6500&amp;cur=2799&amp;symbol=%24&amp;color=green">
+<img id="thermometer" style="width:540px;" src="https://www.abcfundraising.com/thermometer-generator?max=6500&amp;cur=2799&amp;symbol=%24&amp;color=green">
 
 <p style="font-family: 'Gotham Book', Gotham-Book, Gotham, Veranda, Arial, sans-serif; font-size: 80px;">forbeslibrary.org/giving</p>
 
+<script>
+    var params = (new URL(location)).searchParams;
+    var thermometer = document.getElementById('thermometer');
+    if (params.has("amount")) {
+        var amount = params.getAll("amount");
+        thermometer.src = 'https://www.abcfundraising.com/thermometer-generator?max=6500&amp;cur=' + amount + '&amp;symbol=%24&amp;color=green';
+    }
+</script>
+    
 </body>
 </html>
