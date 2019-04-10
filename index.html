@@ -11,6 +11,8 @@
     var thermometer = document.getElementById('thermometer');
     if (params.has("amount")) {
         var amount = params.getAll("amount");
+        amount = parseInt(amount);
+        amount = Math.max(25, amount);
         thermometer.src = 'https://www.abcfundraising.com/thermometer-generator?max=6500&amp;cur=' + amount + '&amp;symbol=%24&amp;color=green';
     }
 </script>
