@@ -7,13 +7,15 @@
 <p style="font-family: 'Gotham Book', Gotham-Book, Gotham, Veranda, Arial, sans-serif; font-size: 80px;">forbeslibrary.org/giving</p>
 
 <script>
-    var params = (new URL(location)).searchParams;
-    var thermometer = document.getElementById('thermometer');
-    if (params.has("amount")) {
-        var amount = params.getAll("amount");
-        amount = parseInt(amount);
-        amount = Math.max(25, amount);
-        thermometer.src = 'https://www.abcfundraising.com/thermometer-generator?max=6500&amp;cur=' + amount + '&amp;symbol=%24&amp;color=green';
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        var params = (new URL(location)).searchParams;
+        var thermometer = document.getElementById('thermometer');
+        if (params.has("amount")) {
+            var amount = params.getAll("amount");
+            amount = parseInt(amount);
+            amount = Math.max(25, amount);
+            thermometer.src = 'https://www.abcfundraising.com/thermometer-generator?max=6500&amp;cur=' + amount + '&amp;symbol=%24&amp;color=green';
+        }
     }
 </script>
     
