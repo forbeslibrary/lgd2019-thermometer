@@ -10,13 +10,20 @@
     document.addEventListener("DOMContentLoaded", function(event) { 
         var params = (new URL(location)).searchParams;
         var thermometer = document.getElementById('thermometer');
+        var max = 6500;
         var amount = 2799;
         if (params.has("amount")) {
             amount = params.getAll("amount");
+            amount = parseInt(amount);
         }
-        amount = parseInt(amount);
+        if (params.has("max")) {
+            max = params.getAll("max");
+            max = parseInt(max);
+        }
+        
         amount = Math.max(25, amount);
-        thermometer.src = 'https://www.abcfundraising.com/thermometer-generator?max=6500&cur=' + amount + '&symbol=%24&color=green';
+        max = Math.max(25, max);
+        thermometer.src = 'https://www.abcfundraising.com/thermometer-generator?max=' + max + '&cur=' + amount + '&symbol=%24&color=green';
     });
 </script>
     
