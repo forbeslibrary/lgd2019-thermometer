@@ -13,11 +13,11 @@
         var max = 6500;
         var amount = 2799;
         if (params.has("amount")) {
-            amount = params.getAll("amount");
+            amount = params.get("amount");
             amount = parseInt(amount);
         }
         if (params.has("max")) {
-            max = params.getAll("max");
+            max = params.get("max");
             max = parseInt(max);
         }
         
