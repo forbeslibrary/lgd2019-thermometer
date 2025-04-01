@@ -10,8 +10,8 @@
     document.addEventListener("DOMContentLoaded", function(event) { 
         var params = (new URL(location)).searchParams;
         var thermometer = document.getElementById('thermometer');
-        var max = 6500;
-        var amount = 2799;
+        var max = 25000;
+        var amount = 7666;
         if (params.has("amount")) {
             amount = params.get("amount");
             amount = parseInt(amount);
